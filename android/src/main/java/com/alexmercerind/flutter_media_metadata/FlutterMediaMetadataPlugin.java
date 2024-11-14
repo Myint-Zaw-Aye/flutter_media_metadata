@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import java.io.IOException;  // Import IOException
+import java.io.IOException;  // Make sure to import IOException
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
@@ -41,9 +41,9 @@ public class FlutterMediaMetadataPlugin implements FlutterPlugin, MethodCallHand
           response.put("albumArt", retriever.getAlbumArt());
 
           try {
-            retriever.release();  // Wrap release call in try-catch block
+            retriever.release();  // Wrap the release method in try-catch
           } catch (IOException e) {
-            e.printStackTrace();  // Handle IOException if needed (you can log it or notify the user)
+            e.printStackTrace();  // Log the exception or handle it as needed
           }
 
           new Handler(Looper.getMainLooper())
